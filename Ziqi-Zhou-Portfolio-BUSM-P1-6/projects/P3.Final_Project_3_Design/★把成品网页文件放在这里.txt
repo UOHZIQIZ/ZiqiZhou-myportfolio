@@ -1,2 +1,0 @@
-把 Project 3 成品网页（Monet's Garden 游戏） 的全部文件放进这个文件夹（index.html 放在这一层）。
-作品集里的“体验成品”按钮会打开这里的 index.html。
