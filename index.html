@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ziqi Zhou · Cathy · Portfolio</title>
+<meta name="description" content="Ziqi Zhou (Cathy) · Interaction Design · Sheridan College">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Special+Elite&family=Mrs+Saint+Delafield&family=Homemade+Apple&family=Noto+Serif+SC:wght@200..900&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">跳到正文</a>
+
+<!-- 顶部丝带 -->
+<div class="ticker" aria-hidden="true"><div class="ticker__track" id="ticker"></div></div>
+
+<!-- 导航：每一项都是独立页面 -->
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__mark" href="#home" id="monogram">Cathy Z.</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#home" data-page="home" data-i18n="navHome">首页</a>
+      <a href="#works" data-page="works" data-i18n="navWorks">作品集</a>
+      <a href="#about" data-page="about" data-i18n="navAbout">关于我</a>
+      <a href="#contact" data-page="contact" data-i18n="navContact">联系</a>
+    </nav>
+    <div class="nav__right">
+    <div class="nav__clock"><span id="clockCity">Toronto</span> · <span id="clock">--:--</span></div>
+    <label class="lang">
+      <span class="sr" data-i18n="language">语言</span>
+      <select id="langSelect">
+        <option value="zh">简体中文</option>
+        <option value="zht">繁體中文</option>
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+        <option value="fr">Français</option>
+        <option value="ko">한국어</option>
+      </select>
+    </label>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ================= 首页：一页看完所有内容 ================= -->
+  <div class="page" data-page="home">
+    <section class="hero">
+      <div class="hero__decor" aria-hidden="true">
+        <img class="deco deco--lilies-l" src="images/bg/lilies-paint.webp" alt="" width="520" height="615">
+        <img class="deco deco--lilies-r" src="images/bg/lilies-paint-flip.webp" alt="" width="520" height="615">
+        <img class="deco deco--cat" src="images/bg/cat-flowers.webp" alt="" width="420" height="484">
+      </div>
+      <div class="wrap hero__grid">
+        <div class="hero__card paper-card">
+          <img class="pin pin--top" src="images/bg/button-star.webp" alt="" aria-hidden="true" width="140" height="135">
+          <p class="eyebrow" id="heroTag"></p>
+          <h1 class="hero__name" id="heroName"><span>Ziqi Zhou</span><span>Cathy</span></h1>
+          <p class="hero__tagline" id="heroTagline"></p>
+          <p class="hero__intro" id="heroBio"></p>
+          <div class="hero__cta">
+            <a class="btn btn--ink" href="#works" data-i18n="ctaWorks">查看作品集</a>
+            <a class="btn btn--line" href="#about" data-i18n="ctaAbout">了解我</a>
+          </div>
+        </div>
+
+        <!-- 目录卡（纯色） -->
+        <nav class="index-card" aria-label="Contents">
+          <img class="pin pin--top" src="images/bg/button-star.webp" alt="" aria-hidden="true" width="140" height="135">
+          <div class="index-card__head">
+            <span data-i18n="contents">目 录</span><span class="type">CONTENTS</span>
+          </div>
+          <ol class="index-card__list">
+            <li><a href="#works"><b>I.</b><span data-i18n="navWorks">作品集</span><em>Works</em><i id="dirCount"></i></a></li>
+            <li><a href="#about"><b>II.</b><span data-i18n="navAbout">关于我</span><em>About</em><i aria-hidden="true">✿</i></a></li>
+            <li><a href="#philosophy"><b>III.</b><span data-i18n="navPhilosophy">设计理念</span><em>Philosophy</em><i aria-hidden="true">❦</i></a></li>
+            <li><a href="#contact"><b>IV.</b><span data-i18n="navContact">联系</span><em>Contact</em><i aria-hidden="true">✉</i></a></li>
+          </ol>
+          <dl class="index-card__facts" id="facts"></dl>
+        </nav>
+      </div>
+    </section>
+    <div class="lace-divider" aria-hidden="true"><img src="images/bg/bow.webp" alt="" width="280" height="274"></div>
+
+    <!-- 精选作品 -->
+    <section class="section" aria-labelledby="homeWorksTitle">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="section__script" aria-hidden="true">from my garden</p>
+            <h2 class="section__title" id="homeWorksTitle" data-i18n="worksTitle">精选作品</h2>
+          </div>
+          <a class="more-link" href="#works" data-i18n="viewAll">查看全部作品 →</a>
+        </div>
+        <div class="works" id="homeGrid"></div>
+      </div>
+    </section>
+    <div class="lace-divider" aria-hidden="true"><img src="images/bg/bow.webp" alt="" width="280" height="274"></div>
+
+    <!-- 关于我 -->
+    <section class="section" aria-labelledby="homeAboutTitle">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="section__script" aria-hidden="true">a little story</p>
+            <h2 class="section__title js-about-heading" id="homeAboutTitle"></h2>
+          </div>
+          <a class="more-link" href="#about" data-i18n="aboutMore">关于我 & 简历 →</a>
+        </div>
+        <div class="about">
+          <div class="paper-box about__text">
+            <div class="js-about-paras"></div>
+            <ul class="chips js-about-chips"></ul>
+          </div>
+          <figure class="photo-frame">
+            <img class="pin pin--top" src="images/bg/button-star.webp" alt="" aria-hidden="true" width="140" height="135">
+            <div class="photo-frame__img js-photo"></div>
+            <figcaption class="js-photo-cap">周子淇 · Cathy</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 简历 -->
+    <section class="section" aria-labelledby="homeResumeTitle">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="section__script" aria-hidden="true">so far</p>
+            <h2 class="section__title" id="homeResumeTitle" data-i18n="resumeTitle">教育与经历</h2>
+          </div>
+          <a class="btn btn--ink resume-link" href="#" target="_blank" rel="noopener" data-i18n="resumeDownload">下载简历</a>
+        </div>
+        <div class="resume">
+          <div class="ledger">
+            <h3 class="subhead" data-i18n="education">教育背景</h3>
+            <ol class="timeline js-edu"></ol>
+            <h3 class="subhead subhead--gap" data-i18n="experience">经历</h3>
+            <ol class="timeline js-exp"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 联系 -->
+    <section class="contact">
+      <img class="contact__lilies contact__lilies--l" src="images/bg/lilies-paint.webp" alt="" aria-hidden="true" width="520" height="615">
+      <img class="contact__lilies contact__lilies--r" src="images/bg/lilies-paint-flip.webp" alt="" aria-hidden="true" width="520" height="615">
+      <img class="contact__cat" src="images/bg/cat-black.webp" alt="" aria-hidden="true" width="300" height="328">
+      <div class="wrap">
+        <div class="letter">
+          <span class="seal js-seal" aria-hidden="true">C</span>
+          <p class="section__script" aria-hidden="true">with love,</p>
+          <h2 class="letter__title js-contact-heading"></h2>
+          <p class="letter__sub js-contact-sub"></p>
+          <div class="letter__row">
+            <span class="letter__email js-email"></span>
+            <button class="btn btn--ink js-copy" type="button" data-i18n="copy">复制邮箱</button>
+          </div>
+          <p class="toast js-toast" role="status" aria-live="polite"></p>
+          <ul class="contact-cards js-contact-cards"></ul>
+          <p class="letter__note js-contact-note"></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= 作品集 ================= -->
+  <div class="page" data-page="works" hidden>
+    <header class="page-head">
+      <img class="page-head__cat" src="images/bg/cat-flowers.webp" alt="" aria-hidden="true" width="420" height="484">
+      <img class="page-head__lilies" src="images/bg/lilies-paint-flip.webp" alt="" aria-hidden="true" width="520" height="615">
+      <div class="wrap"><div class="page-head__card"><img class="pin pin--tl" src="images/bg/button-star.webp" alt="" aria-hidden="true" width="140" height="135">
+        <p class="section__script" aria-hidden="true">from my garden</p>
+        <h1 class="section__title" data-i18n="worksTitle" tabindex="-1">精选作品</h1>
+        <p class="page-head__lead" data-i18n="worksLead"></p>
+      </div></div>
+    </header>
+    <section class="section section--tight" aria-label="Works">
+      <div class="wrap">
+        <div class="filters" id="filters" role="tablist"></div>
+        <div class="works" id="worksGrid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= 关于我（含设计理念和简历） ================= -->
+  <div class="page" data-page="about" hidden>
+    <header class="page-head">
+      <img class="page-head__ivy" src="images/bg/ivy-flip.webp" alt="" aria-hidden="true" width="420" height="649">
+      <div class="wrap"><div class="page-head__card"><img class="pin pin--tl" src="images/bg/button-star.webp" alt="" aria-hidden="true" width="140" height="135">
+        <p class="section__script" aria-hidden="true">a little story</p>
+        <h1 class="section__title js-about-heading" tabindex="-1"></h1>
+        <nav class="page-head__jump" aria-label="On this page">
+          <a href="#philosophy" data-i18n="philosophyTitle">设计理念</a>
+          <a href="#resume" data-i18n="resumeTitle">教育与经历</a>
+        </nav>
+      </div></div>
+    </header>
+    <section class="section section--tight">
+      <div class="wrap">
+        <div class="about">
+          <div class="paper-box about__text">
+            <div class="js-about-paras"></div>
+            <ul class="chips js-about-chips"></ul>
+          </div>
+          <figure class="photo-frame">
+            <img class="pin pin--top" src="images/bg/button-star.webp" alt="" aria-hidden="true" width="140" height="135">
+            <div class="photo-frame__img js-photo"></div>
+            <figcaption class="js-photo-cap">周子淇 · Cathy</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <div class="ivy-divider" aria-hidden="true"><img src="images/bg/ivy-h.webp" alt="" width="649" height="420"></div>
+
+    <!-- 设计理念 -->
+    <section class="section" id="philosophy" aria-labelledby="philosophyTitle">
+      <div class="wrap">
+        <div class="philosophy">
+          <div class="philosophy__head">
+            <p class="section__script" aria-hidden="true">what I believe</p>
+            <h2 class="section__title section__title--gap" id="philosophyTitle" data-i18n="philosophyTitle">设计理念</h2>
+          </div>
+          <div class="paper-box philosophy__body">
+            <p class="philosophy__lead js-phil-lead"></p>
+            <ol class="principles js-principles"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ivy-divider" aria-hidden="true"><img src="images/bg/ivy-h.webp" alt="" width="649" height="420"></div>
+
+    <section class="section" id="resume" aria-labelledby="aboutResumeTitle">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="section__script" aria-hidden="true">so far</p>
+            <h2 class="section__title" id="aboutResumeTitle" data-i18n="resumeTitle">教育与经历</h2>
+          </div>
+          <a class="btn btn--ink resume-link" href="#" target="_blank" rel="noopener" data-i18n="resumeDownload">下载简历</a>
+        </div>
+        <div class="resume">
+          <div class="ledger">
+            <h3 class="subhead" data-i18n="education">教育背景</h3>
+            <ol class="timeline js-edu"></ol>
+            <h3 class="subhead subhead--gap" data-i18n="experience">经历</h3>
+            <ol class="timeline js-exp"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= 联系 ================= -->
+  <div class="page" data-page="contact" hidden>
+    <section class="contact">
+      <img class="contact__lilies contact__lilies--l" src="images/bg/lilies-paint.webp" alt="" aria-hidden="true" width="520" height="615">
+      <img class="contact__lilies contact__lilies--r" src="images/bg/lilies-paint-flip.webp" alt="" aria-hidden="true" width="520" height="615">
+      <img class="contact__cat" src="images/bg/cat-black.webp" alt="" aria-hidden="true" width="300" height="328">
+      <div class="wrap">
+        <div class="letter">
+          <span class="seal js-seal" aria-hidden="true">C</span>
+          <p class="section__script" aria-hidden="true">with love,</p>
+          <h1 class="letter__title js-contact-heading" tabindex="-1"></h1>
+          <p class="letter__sub js-contact-sub"></p>
+          <div class="letter__row">
+            <span class="letter__email js-email"></span>
+            <button class="btn btn--ink js-copy" type="button" data-i18n="copy">复制邮箱</button>
+          </div>
+          <p class="toast js-toast" role="status" aria-live="polite"></p>
+          <ul class="contact-cards js-contact-cards"></ul>
+          <p class="letter__note js-contact-note"></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= 作品详情（#case-作品id） ================= -->
+  <article class="page case" data-page="case" id="case" hidden>
+    <div class="wrap">
+      <a class="case__back" href="#works" data-i18n="allWorks">← 全部作品</a>
+
+      <header class="case__head">
+        <p class="type case__eyebrow" id="caseEyebrow"></p>
+        <h1 class="case__title" id="caseTitle" tabindex="-1"></h1>
+        <p class="case__en" id="caseSub"></p>
+        <p class="case__summary" id="caseSummary"></p>
+        <ul class="case__tags" id="caseTags"></ul>
+        <div class="case__actions" id="caseActions"></div>
+      </header>
+
+      <figure class="case__hero" id="caseHero"></figure>
+
+      <dl class="glance" id="caseGlance"></dl>
+
+      <div class="case__body">
+        <nav class="case__toc" aria-label="On this page">
+          <p class="type" data-i18n="onThisPage">本页目录</p>
+          <ol id="caseToc"></ol>
+        </nav>
+        <div class="case__content" id="caseContent"></div>
+      </div>
+
+      <nav class="case__pager" id="casePager" aria-label="More work"></nav>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span id="footName">© Ziqi Zhou · 周子淇</span>
+    <span id="footLinks" class="footer__links"></span>
+    <button type="button" class="footer__top" id="toTop" data-i18n="backTop">回到顶部 ↑</button>
+  </div>
+</footer>
+
+<!-- 图片放大 -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__btn lightbox__close" type="button" id="lbClose" aria-label="Close">×</button>
+  <button class="lightbox__btn lightbox__prev" type="button" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lightbox__btn lightbox__next" type="button" id="lbNext" aria-label="Next">›</button>
+  <p class="lightbox__count type" id="lbCount"></p>
+</div>
+
+<!-- PDF 全屏 -->
+<div class="pdf-full" id="pdfFull" hidden>
+  <div class="pdf-full__bar">
+    <span class="type" id="pdfFullLabel"></span>
+    <button class="lightbox__btn" type="button" id="pdfFullClose" aria-label="Close">×</button>
+  </div>
+  <iframe id="pdfFullFrame" title="PDF"></iframe>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/flora.js"></script>
+<script src="js/diagrams.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

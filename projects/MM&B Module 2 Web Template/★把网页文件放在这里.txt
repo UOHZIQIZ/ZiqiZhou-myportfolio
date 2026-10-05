@@ -1,0 +1,5 @@
+把 “MM&B Module 2 Web Template” 网站的全部文件放进这个文件夹：
+  - index.html（首页必须叫 index.html，并且直接放在这一层，不要再套一层文件夹）
+  - css / js / 图片 / 音频 等
+放好后，删掉原来的占位 index.html（或者直接覆盖它）。
+作品集里的“点击查看”按钮会打开这里的 index.html。
